@@ -2,13 +2,14 @@
 import SocialIcon from "./SocialIcon.astro";
 import { siteConfig } from "../config";
 
-const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
-const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
-const hasEducation = siteConfig.education && siteConfig.education.length > 0;
-const hasPapers = siteConfig.papers && siteConfig.papers.length > 0;
+const hasAbout = !!(siteConfig.aboutMe || siteConfig.skills.length > 0);
+const hasProjects = siteConfig.projects.length > 0;
+const hasExperience = siteConfig.experience.length > 0;
+const hasEducation = siteConfig.education.length > 0;
+const hasPapers = siteConfig.papers.length > 0;
 ---
 
-<footer style={`--accent-color: ${siteConfig.accentColor}; background-color: var(--bg-surface); border-top: 1px solid var(--border)`}>
+<footer style="background-color: var(--bg-surface); border-top: 1px solid var(--border)">
   <div class="mx-auto max-w-6xl px-6 py-12 lg:px-8">
     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
       <div class="flex flex-col gap-3">
@@ -17,15 +18,15 @@ const hasPapers = siteConfig.papers && siteConfig.papers.length > 0;
         </h3>
         <p class="text-sm" style="color: var(--text-muted)">{siteConfig.title}</p>
         <div class="flex gap-5 mt-1" style="color: var(--text-muted)">
-          {siteConfig.social?.email && <SocialIcon type="email" href={siteConfig.social.email} class="footer-icon" />}
-          {siteConfig.social?.linkedin && <SocialIcon type="linkedin" href={siteConfig.social.linkedin} class="footer-icon" />}
-          {siteConfig.social?.github && <SocialIcon type="github" href={siteConfig.social.github} class="footer-icon" />}
+          {siteConfig.social.email && <SocialIcon type="email" href={siteConfig.social.email} class="footer-icon" />}
+          {siteConfig.social.linkedin && <SocialIcon type="linkedin" href={siteConfig.social.linkedin} class="footer-icon" />}
+          {siteConfig.social.github && <SocialIcon type="github" href={siteConfig.social.github} class="footer-icon" />}
         </div>
       </div>
 
       <div class="flex flex-col gap-4 md:items-end">
         <nav aria-label="Footer navigation" class="flex flex-wrap gap-x-6 gap-y-2">
-          <a href="#about" class="text-sm footer-link transition-colors">About</a>
+          {hasAbout && <a href="#about" class="text-sm footer-link transition-colors">About</a>}
           {hasProjects && <a href="#projects" class="text-sm footer-link transition-colors">Projects</a>}
           {hasExperience && <a href="#experience" class="text-sm footer-link transition-colors">Experience</a>}
           {hasEducation && <a href="#education" class="text-sm footer-link transition-colors">Education</a>}

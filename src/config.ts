@@ -44,6 +44,8 @@ export interface SiteConfig {
   location?: string;
   cvLink?: string;
   description: string;
+  /** Absolute URL or root-relative path to the Open Graph preview image (e.g. "/og.png") */
+  ogImage?: string;
   accentColor: string;
   social: {
     email?: string;

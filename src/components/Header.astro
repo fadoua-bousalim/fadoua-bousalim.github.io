@@ -2,10 +2,11 @@
 import SocialIcon from "./SocialIcon.astro";
 import { siteConfig } from "../config";
 
-const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
-const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
-const hasEducation = siteConfig.education && siteConfig.education.length > 0;
-const hasPapers = siteConfig.papers && siteConfig.papers.length > 0;
+const hasAbout = !!(siteConfig.aboutMe || siteConfig.skills.length > 0);
+const hasProjects = siteConfig.projects.length > 0;
+const hasExperience = siteConfig.experience.length > 0;
+const hasEducation = siteConfig.education.length > 0;
+const hasPapers = siteConfig.papers.length > 0;
 ---
 
 <header
@@ -33,11 +34,15 @@ const hasPapers = siteConfig.papers && siteConfig.papers.length > 0;
           </li>
         )
       }
-      <li>
-        <a href="#about" class="text-sm font-medium transition-colors duration-200 nav-link">
-          About
-        </a>
-      </li>
+      {
+        hasAbout && (
+          <li>
+            <a href="#about" class="text-sm font-medium transition-colors duration-200 nav-link">
+              About
+            </a>
+          </li>
+        )
+      }
       {
         hasProjects && (
           <li>
@@ -69,9 +74,9 @@ const hasPapers = siteConfig.papers && siteConfig.papers.length > 0;
 
     <!-- Desktop social icons -->
     <div class="hidden md:flex items-center gap-2 social-icons">
-      {siteConfig.social?.linkedin && <SocialIcon type="linkedin" href={siteConfig.social.linkedin} class="social-icon" />}
-      {siteConfig.social?.github && <SocialIcon type="github" href={siteConfig.social.github} class="social-icon" />}
-      {siteConfig.social?.email && <SocialIcon type="email" href={siteConfig.social.email} class="social-icon" />}
+      {siteConfig.social.linkedin && <SocialIcon type="linkedin" href={siteConfig.social.linkedin} class="social-icon" />}
+      {siteConfig.social.github && <SocialIcon type="github" href={siteConfig.social.github} class="social-icon" />}
+      {siteConfig.social.email && <SocialIcon type="email" href={siteConfig.social.email} class="social-icon" />}
     </div>
 
     <!-- Mobile hamburger button -->
@@ -107,9 +112,13 @@ const hasPapers = siteConfig.papers && siteConfig.papers.length > 0;
           </a>
         )
       }
-      <a href="#about" class="block text-base font-medium nav-link transition-colors duration-200 py-2">
-        About
-      </a>
+      {
+        hasAbout && (
+          <a href="#about" class="block text-base font-medium nav-link transition-colors duration-200 py-2">
+            About
+          </a>
+        )
+      }
       {
         hasProjects && (
           <a href="#projects" class="block text-base font-medium nav-link transition-colors duration-200 py-2">
@@ -133,9 +142,9 @@ const hasPapers = siteConfig.papers && siteConfig.papers.length > 0;
       }
 
       <div class="flex items-center gap-3 pt-4" style="border-top: 1px solid var(--border); color: var(--text-secondary)">
-        {siteConfig.social?.linkedin && <SocialIcon type="linkedin" href={siteConfig.social.linkedin} class="social-icon" />}
-        {siteConfig.social?.github && <SocialIcon type="github" href={siteConfig.social.github} class="social-icon" />}
-        {siteConfig.social?.email && <SocialIcon type="email" href={siteConfig.social.email} class="social-icon" />}
+        {siteConfig.social.linkedin && <SocialIcon type="linkedin" href={siteConfig.social.linkedin} class="social-icon" />}
+        {siteConfig.social.github && <SocialIcon type="github" href={siteConfig.social.github} class="social-icon" />}
+        {siteConfig.social.email && <SocialIcon type="email" href={siteConfig.social.email} class="social-icon" />}
       </div>
     </div>
   </nav>

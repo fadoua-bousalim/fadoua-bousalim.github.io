@@ -24,10 +24,12 @@ import "../styles/global.css";
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Cormorant+Garamond:wght@600&display=swap"
       rel="stylesheet"
     />
+    <link rel="canonical" href={Astro.site?.toString() ?? ""} />
     <meta property="og:title" content={`${siteConfig.name} - ${siteConfig.title}`} />
     <meta property="og:description" content={siteConfig.description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.site?.toString() ?? ""} />
+    {siteConfig.ogImage && <meta property="og:image" content={siteConfig.ogImage} />}
     <title>{siteConfig.name} - {siteConfig.title}</title>
   </head>
   <body>

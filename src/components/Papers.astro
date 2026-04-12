@@ -39,7 +39,7 @@ const hasPapers = siteConfig.papers && siteConfig.papers.length > 0;
                       d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                 </div>
-                <span class="paper-title text-sm sm:text-base font-medium leading-snug" style="color: var(--text-secondary)">
+                <span class="paper-title text-sm sm:text-base font-medium leading-snug">
                   {paper.title}
                 </span>
               </div>
@@ -67,7 +67,10 @@ const hasPapers = siteConfig.papers && siteConfig.papers.length > 0;
     border-color: var(--border-hover);
     background-color: var(--bg-surface-hover);
   }
+  .paper-title {
+    color: var(--text-secondary);
+  }
   .paper-card:hover .paper-title {
-    color: var(--text-primary) !important;
+    color: var(--text-primary);
   }
 </style>
