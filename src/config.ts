@@ -52,7 +52,7 @@ export interface SiteConfig {
     linkedin?: string;
     github?: string;
   };
-  aboutMe: string;
+  aboutMe?: string;
   skills: SkillItem[];
   projects: ProjectItem[];
   experience: ExperienceItem[];
@@ -157,7 +157,7 @@ export const siteConfig: SiteConfig = {
       bullets: [
         "Built GenAI products data infrastructure from the ground up",
         "Designed and optimised ETL processes using DBT, GCP, and Airflow",
-        "Designed classification models, from training data curation to fine tuning",
+        "Designed classification models, from data curation to fine tuning",
       ],
       techStack: ["DBT", "GCP", "BigQuery", "Airflow", "Python", "GenAI", "GitHub CI/CD"],
     },

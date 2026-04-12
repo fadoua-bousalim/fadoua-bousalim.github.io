@@ -2,7 +2,7 @@
 import { siteConfig } from "../config";
 import { getIconSrc } from "../utils/icons";
 
-const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
+const hasProjects = siteConfig.projects.length > 0;
 ---
 
 {
@@ -33,7 +33,7 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
                   target="_blank"
                   rel="noopener noreferrer"
                   class="absolute top-5 right-5 sm:top-6 sm:right-6 w-8 h-8 flex items-center justify-center rounded-full transition-all duration-300 arrow-btn"
-                  style={`background-color: ${siteConfig.accentColor}15; color: ${siteConfig.accentColor}`}
+                  style={`color: ${siteConfig.accentColor}; --arrow-bg: ${siteConfig.accentColor}15; --arrow-bg-hover: ${siteConfig.accentColor}33`}
                   aria-label={`Open ${project.name}`}
                 >
                   <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -128,10 +128,10 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
     background-color: var(--bg-surface-hover);
     transform: translateY(-2px);
   }
-  .group:hover .arrow-btn {
-    background-color: color-mix(in srgb, var(--accent-color) 20%, transparent) !important;
+  .arrow-btn {
+    background-color: var(--arrow-bg);
   }
-  .credits-link:hover {
-    color: var(--text-secondary) !important;
+  .group:hover .arrow-btn {
+    background-color: var(--arrow-bg-hover);
   }
 </style>
