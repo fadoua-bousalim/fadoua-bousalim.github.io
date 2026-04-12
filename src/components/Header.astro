@@ -12,7 +12,7 @@ const hasPapers = siteConfig.papers && siteConfig.papers.length > 0;
   class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
   style={`--accent-color: ${siteConfig.accentColor}`}
 >
-  <nav class="max-w-7xl mx-auto px-6 sm:px-8 py-4 flex items-center justify-between">
+  <nav aria-label="Main navigation" class="max-w-7xl mx-auto px-6 sm:px-8 py-4 flex items-center justify-between">
     <!-- Logo -->
     <a
       href="#hero"
@@ -124,6 +124,7 @@ const hasPapers = siteConfig.papers && siteConfig.papers.length > 0;
 
   <!-- Mobile menu -->
   <nav
+    aria-label="Mobile navigation"
     id="mobile-menu"
     class="md:hidden hidden"
     style="background-color: rgba(10, 10, 18, 0.95); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-top: 1px solid var(--border)"
