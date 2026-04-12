@@ -33,12 +33,17 @@ const hasPapers = siteConfig.papers.length > 0;
           {hasPapers && <a href="#papers" class="text-sm footer-link transition-colors">Papers</a>}
         </nav>
         <p class="text-xs" style="color: var(--text-muted)">
-          © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+          © <span id="footer-year">{new Date().getFullYear()}</span> {siteConfig.name}. All rights reserved.
         </p>
       </div>
     </div>
   </div>
 </footer>
+
+<script>
+  const el = document.getElementById("footer-year");
+  if (el) el.textContent = String(new Date().getFullYear());
+</script>
 
 <style>
   /* :global needed — .footer-icon is applied to an <a> inside SocialIcon.astro */

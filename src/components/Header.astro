@@ -24,7 +24,7 @@ const hasPapers = siteConfig.papers.length > 0;
     </a>
 
     <!-- Desktop nav links -->
-    <ul class="hidden md:flex items-center gap-8">
+    <ul role="list" class="hidden md:flex items-center gap-8">
       {
         hasExperience && (
           <li>
@@ -181,6 +181,17 @@ const hasPapers = siteConfig.papers.length > 0;
       closeIcon?.classList.add("hidden");
       menuBtn?.setAttribute("aria-expanded", "false");
     });
+  });
+
+  // Close menu on Escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !mobileMenu?.classList.contains("hidden")) {
+      mobileMenu?.classList.add("hidden");
+      hamburgerIcon?.classList.remove("hidden");
+      closeIcon?.classList.add("hidden");
+      menuBtn?.setAttribute("aria-expanded", "false");
+      menuBtn?.focus();
+    }
   });
 </script>
 

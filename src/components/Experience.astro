@@ -39,19 +39,21 @@ const hasExperience = siteConfig.experience.length > 0;
                 </span>
               </div>
 
-              <ul class="space-y-2 mb-5">
-                {exp.bullets.map((bullet) => (
-                  <li class="flex items-start gap-3">
-                    <span
-                      class="inline-block w-1 h-1 rounded-full mt-2.5 flex-shrink-0"
-                      style={`background-color: ${siteConfig.accentColor}`}
-                    />
-                    <span class="text-sm leading-relaxed" style="color: var(--text-secondary)">
-                      {bullet}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+              {exp.bullets.length > 0 && (
+                <ul role="list" class="space-y-2 mb-5">
+                  {exp.bullets.map((bullet) => (
+                    <li class="flex items-start gap-3">
+                      <span
+                        class="inline-block w-1 h-1 rounded-full mt-2.5 flex-shrink-0"
+                        style={`background-color: ${siteConfig.accentColor}`}
+                      />
+                      <span class="text-sm leading-relaxed" style="color: var(--text-secondary)">
+                        {bullet}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              )}
 
               {exp.techStack && exp.techStack.length > 0 && (
                 <div class="flex flex-wrap gap-2 pt-4" style="border-top: 1px solid var(--border)">

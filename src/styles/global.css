@@ -17,6 +17,24 @@ body {
   color: var(--text-primary);
 }
 
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-hover);
+  text-decoration: none;
+}
+.skip-link:focus {
+  left: 1rem;
+}
+
 ::selection {
   background-color: color-mix(in srgb, var(--accent-color) 30%, transparent);
   color: #e8e8f8;
@@ -37,5 +55,6 @@ html {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
   }
 }

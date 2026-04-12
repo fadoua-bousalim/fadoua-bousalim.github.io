@@ -29,10 +29,17 @@ import "../styles/global.css";
     <meta property="og:description" content={siteConfig.description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.site?.toString() ?? ""} />
-    {siteConfig.ogImage && <meta property="og:image" content={siteConfig.ogImage} />}
+    {siteConfig.ogImage && (
+      <meta property="og:image" content={
+        siteConfig.ogImage.startsWith("/")
+          ? `${Astro.site}${siteConfig.ogImage.slice(1)}`
+          : siteConfig.ogImage
+      } />
+    )}
     <title>{siteConfig.name} - {siteConfig.title}</title>
   </head>
   <body>
+    <a href="#hero" class="skip-link">Skip to main content</a>
     <Header />
     <main>
       <Hero />

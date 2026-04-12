@@ -44,7 +44,7 @@ export interface SiteConfig {
   location?: string;
   cvLink?: string;
   description: string;
-  /** Absolute URL or root-relative path to the Open Graph preview image (e.g. "/og.png") */
+  /** Open Graph preview image. Use an absolute URL or a root-relative path (e.g. "/og.png") — root-relative paths are resolved against the site URL automatically. */
   ogImage?: string;
   accentColor: string;
   social: {
