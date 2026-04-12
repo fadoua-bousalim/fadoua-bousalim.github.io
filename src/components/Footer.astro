@@ -53,7 +53,7 @@ const hasPapers = siteConfig.papers && siteConfig.papers.length > 0;
       </div>
 
       <div class="flex flex-col gap-4 md:items-end">
-        <nav class="flex flex-wrap gap-x-6 gap-y-2">
+        <nav aria-label="Footer navigation" class="flex flex-wrap gap-x-6 gap-y-2">
           <a href="#about" class="text-sm footer-link transition-colors">About</a>
           {hasProjects && <a href="#projects" class="text-sm footer-link transition-colors">Projects</a>}
           {hasExperience && <a href="#experience" class="text-sm footer-link transition-colors">Experience</a>}
