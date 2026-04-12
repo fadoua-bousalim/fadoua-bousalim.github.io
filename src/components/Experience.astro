@@ -80,7 +80,8 @@ const iconSrcMap = {
                     const src = iconSrcMap[tech] ?? (slug ? `https://cdn.simpleicons.org/${slug}${color ? `/${color}` : ""}` : null);
                     return (
                       <span
-                        class="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-md tech-badge"
+                        class="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-md"
+                        style={`color: ${siteConfig.accentColor}; background-color: ${siteConfig.accentColor}20; border: 1px solid ${siteConfig.accentColor}40`}
                       >
                         {src && (
                           <img src={src} alt={tech} width="12" height="12" class="w-3 h-3 shrink-0" />
