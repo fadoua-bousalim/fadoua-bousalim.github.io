@@ -83,7 +83,7 @@ export const siteConfig = {
       dateRange: "Oct 2024 – Present",
       bullets: [
         "Building data & MLOps infrastructure for production-ready AI features",
-        "Designing and shipping NLP & GenAI features across the full GCP AI ecosystem",
+        "Designing and shipping NLP & GenAI features across the full GCP ecosystem",
         "Architecting full ML workflows, from data ingestion to model serving, using Terraform and GitHub CI/CD",
       ],
       techStack: ["GCP", "Cloud Functions", "Cloud Run", "VertexAI", "BigQuery", "FastAPI", "NLP", "Terraform", "Python", "GitHub CI/CD", "Docker"],
