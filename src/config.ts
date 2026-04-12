@@ -152,7 +152,7 @@ export const siteConfig: SiteConfig = {
     },
     {
       company: "Talarian",
-      title: "Senior AI Engineer",
+      title: "Senior Data Scientist & MLOps Engineer",
       dateRange: "Jan 2023 – Sept 2024",
       bullets: [
         "Built GenAI products data infrastructure from the ground up",
