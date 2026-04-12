@@ -37,17 +37,19 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
                 </span>
               </div>
 
-              <p class="text-sm leading-relaxed" style="color: var(--text-secondary)">
-                <span class="mr-2" style={`color: ${siteConfig.accentColor}`}>•</span>
-                {edu.achievements.map((achievement, i) => (
-                  <>
-                    {i > 0 && (
-                      <span class="mx-2" style={`color: ${siteConfig.accentColor}`}>•</span>
-                    )}
-                    {achievement}
-                  </>
-                ))}
-              </p>
+              {edu.achievements.length > 0 && (
+                <p class="text-sm leading-relaxed" style="color: var(--text-secondary)">
+                  <span class="mr-2" style={`color: ${siteConfig.accentColor}`}>•</span>
+                  {edu.achievements.map((achievement, i) => (
+                    <>
+                      {i > 0 && (
+                        <span class="mx-2" style={`color: ${siteConfig.accentColor}`}>•</span>
+                      )}
+                      {achievement}
+                    </>
+                  ))}
+                </p>
+              )}
             </div>
           ))}
         </div>

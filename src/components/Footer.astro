@@ -40,7 +40,8 @@ const hasPapers = siteConfig.papers && siteConfig.papers.length > 0;
 </footer>
 
 <style>
-  .footer-icon:hover {
+  /* :global needed — .footer-icon is applied to an <a> inside SocialIcon.astro */
+  :global(.footer-icon):hover {
     color: var(--accent-color);
   }
   .footer-link {

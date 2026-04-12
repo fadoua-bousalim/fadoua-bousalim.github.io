@@ -7,7 +7,7 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
 
 {
   hasProjects && (
-    <section id="projects" class="px-5 py-10 sm:p-12 md:p-16 lg:p-24" style={`--accent-color: ${siteConfig.accentColor}`}>
+    <section id="projects" class="px-5 py-10 sm:p-12 md:p-16 lg:p-24">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
         <div class="lg:col-span-3">
           <h2
@@ -73,7 +73,7 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
                   {project.description}
                 </p>
 
-                {project.skills && project.skills.length > 0 && (
+                {project.skills.length > 0 && (
                   <div class="flex flex-wrap gap-2 pt-1">
                     {project.skills.map((skill) => {
                       const src = getIconSrc(skill);

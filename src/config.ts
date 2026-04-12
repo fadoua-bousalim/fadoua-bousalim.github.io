@@ -1,6 +1,6 @@
 export interface SkillItem {
   name: string;
-  icon?: string | null;
+  icon?: string;
   iconSrc?: string;
   iconColor?: string;
 }
@@ -49,7 +49,6 @@ export interface SiteConfig {
     email?: string;
     linkedin?: string;
     github?: string;
-    twitter?: string;
   };
   aboutMe: string;
   skills: SkillItem[];
@@ -90,7 +89,7 @@ export const siteConfig: SiteConfig = {
     { name: "MySQL",            icon: "mysql" },
     { name: "GenAI / NLP",      icon: "huggingface" },
     { name: "MLOps",            icon: "mlflow" },
-    { name: "AWS",              icon: null, iconSrc: "/icons/aws.svg" },
+    { name: "AWS",              iconSrc: "/icons/aws.svg" },
     { name: "PyTorch",          icon: "pytorch" },
     { name: "TensorFlow",       icon: "tensorflow" },
     { name: "Transformers",     icon: "huggingface" },
@@ -100,7 +99,7 @@ export const siteConfig: SiteConfig = {
     { name: "Supabase",         icon: "supabase"},
     { name: "Fly.io",           icon: "flydotio", iconColor: "ffffff" },
     { name: "Airflow",          icon: "apacheairflow" },
-    { name: "DBT",              icon: null, iconSrc: "/icons/dbt.png" },
+    { name: "DBT",              iconSrc: "/icons/dbt.png" },
   ],
   projects: [
     {

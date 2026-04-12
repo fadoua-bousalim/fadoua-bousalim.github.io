@@ -11,7 +11,6 @@ const hasPapers = siteConfig.papers && siteConfig.papers.length > 0;
 <header
   id="header"
   class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-  style={`--accent-color: ${siteConfig.accentColor}`}
 >
   <nav aria-label="Main navigation" class="max-w-7xl mx-auto px-6 sm:px-8 py-4 flex items-center justify-between">
     <!-- Logo -->
@@ -84,10 +83,10 @@ const hasPapers = siteConfig.papers && siteConfig.papers.length > 0;
       aria-expanded="false"
       aria-controls="mobile-menu"
     >
-      <svg id="hamburger-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg id="hamburger-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
-      <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
@@ -187,7 +186,9 @@ const hasPapers = siteConfig.papers && siteConfig.papers.length > 0;
   .social-icons {
     color: var(--text-secondary);
   }
-  .social-icon {
+  /* :global needed because .social-icon is applied to an <a> inside SocialIcon.astro,
+     which lives in a different component scope and won't receive this component's cid. */
+  :global(.social-icon) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -197,7 +198,7 @@ const hasPapers = siteConfig.papers && siteConfig.papers.length > 0;
     border: 1px solid var(--border);
     background-color: var(--bg-surface);
   }
-  .social-icon:hover {
+  :global(.social-icon):hover {
     color: var(--accent-color);
     border-color: var(--border-hover);
     background-color: var(--bg-surface-hover);

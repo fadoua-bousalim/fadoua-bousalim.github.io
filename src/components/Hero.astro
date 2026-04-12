@@ -1,11 +1,17 @@
 ---
 import { siteConfig } from "../config";
+
+// Link to the first section that actually renders
+const ctaHref =
+  siteConfig.experience.length > 0 ? "#experience" :
+  siteConfig.projects.length > 0  ? "#projects"   :
+  "#about";
 ---
 
 <section
   id="hero"
   class="relative isolate overflow-hidden min-h-screen flex flex-col justify-center"
-  style={`--accent-color: ${siteConfig.accentColor}; background-color: var(--bg-base)`}
+  style="background-color: var(--bg-base)"
 >
   <!-- Subtle grid -->
   <svg
@@ -68,12 +74,12 @@ import { siteConfig } from "../config";
     <!-- CTA Buttons -->
     <div class="mt-10 flex flex-wrap gap-4 animate-fade-in animation-delay-300">
       <a
-        href="#experience"
+        href={ctaHref}
         class="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-white font-semibold text-sm sm:text-base transition-all duration-200 hover:opacity-[0.85] hover:-translate-y-0.5"
         style={`background-color: ${siteConfig.accentColor}`}
       >
         Check My Work
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
         </svg>
       </a>
@@ -87,7 +93,7 @@ import { siteConfig } from "../config";
             style={`border: 1px solid ${siteConfig.accentColor}40; color: ${siteConfig.accentColor}; background: ${siteConfig.accentColor}08`}
           >
             Download CV
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
           </a>
