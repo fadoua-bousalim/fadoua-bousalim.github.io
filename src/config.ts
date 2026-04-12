@@ -126,7 +126,7 @@ export const siteConfig: SiteConfig = {
       icon: "scikitlearn",
       description:
         "Implemented and analysed Naive Bayes spam classifiers (Multinomial & Gaussian) on a real email dataset, achieving up to 97% accuracy and a 0.6% false alarm rate. Paired with a Markov chain text generator to explore the limits of word independence assumptions in human language.",
-      link: "https://github.com/fadoua-bousalim/academic-papers/blob/main/Random_Modeling_For_Spam_Filtering.pdf",
+      link: "https://github.com/fadoua-bousalim/spam-filtering",
       skills: ["Python", "scikit-learn", "Naive Bayes", "Markov Chains", "NLP"],
     },
     {
