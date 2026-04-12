@@ -1,38 +1,26 @@
 ---
-import { siteConfig } from "../config";
+import { siteConfig, buildIconMaps } from "../config";
 const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
 
-const iconMap: Record<string, string> = {
-  "Python":      "python",
-  "GCP":         "googlecloud",
-  "FastAPI":     "fastapi",
-  "Terraform":   "terraform",
-  "Docker":      "docker",
-  "Airflow":     "apacheairflow",
+// Build icon maps from config skills
+const { iconMap: configIconMap, iconColorMap: configColorMap, iconSrcMap: configSrcMap } = buildIconMaps(siteConfig.skills);
+
+// Merge with additional hardcoded icons for experience-specific skills
+const iconMap = {
+  ...configIconMap,
   "SQL":         "postgresql",
-  "PyTorch":     "pytorch",
-  "TensorFlow":  "tensorflow",
-  "BigQuery":    "googlebigquery",
-  "BQML":        "googlebigquery",
-  "Cloud Run":     "googlecloud",
-  "Cloud Functions":     "googlecloud",
-  "VertexAI":     "googlecloud",
   "Looker Studio": "looker",
-  "R":             "r",
+  "R":           "r",
+  "BQML":        "googlebigquery",
 };
 
-const iconColorMap: Record<string, string> = {
-  "GitHub CI/CD": "ffffff",
-  "R":            "ffffff",
+const iconColorMap = {
+  ...configColorMap,
+  "R": "ffffff",
 };
 
-const iconMapExtra: Record<string, string> = {
-  "GitHub CI/CD": "github",
-};
-
-const iconSrcMap: Record<string, string> = {
-  "DBT": "/icons/dbt.png",
-  "AWS": "/icons/aws.svg",
+const iconSrcMap = {
+  ...configSrcMap,
 };
 ---
 
@@ -87,13 +75,12 @@ const iconSrcMap: Record<string, string> = {
               {exp.techStack && exp.techStack.length > 0 && (
                 <div class="flex flex-wrap gap-2 pt-4" style="border-top: 1px solid var(--border)">
                   {exp.techStack.map((tech) => {
-                    const slug = iconMap[tech] ?? iconMapExtra[tech];
+                    const slug = iconMap[tech];
                     const color = iconColorMap[tech];
                     const src = iconSrcMap[tech] ?? (slug ? `https://cdn.simpleicons.org/${slug}${color ? `/${color}` : ""}` : null);
                     return (
                       <span
                         class="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-md tech-badge"
-                        style="color: var(--text-primary); background-color: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18)"
                       >
                         {src && (
                           <img src={src} alt={tech} width="12" height="12" class="w-3 h-3 shrink-0" />
@@ -121,9 +108,13 @@ const iconSrcMap: Record<string, string> = {
     border-color: var(--border-hover);
     background-color: var(--bg-surface-hover);
   }
+  .tech-badge {
+    color: var(--text-primary);
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
   .tech-badge:hover {
-    color: var(--text-primary) !important;
-    border-color: rgba(255,255,255,0.25) !important;
-    background-color: rgba(255,255,255,0.12) !important;
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
   }
 </style>

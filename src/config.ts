@@ -1,3 +1,36 @@
+// Type definitions
+interface SkillObject {
+  name: string;
+  icon?: string | null;
+  iconColor?: string;
+  iconSrc?: string;
+}
+
+type Skill = string | SkillObject;
+
+interface IconMaps {
+  iconMap: Record<string, string>;
+  iconColorMap: Record<string, string>;
+  iconSrcMap: Record<string, string>;
+}
+
+// Helper function to build icon maps from skills
+export function buildIconMaps(skills: Skill[]): IconMaps {
+  const iconMap: Record<string, string> = {};
+  const iconColorMap: Record<string, string> = {};
+  const iconSrcMap: Record<string, string> = {};
+
+  skills.forEach((skill) => {
+    if (typeof skill === "object") {
+      if (skill.icon) iconMap[skill.name] = skill.icon;
+      if (skill.iconColor) iconColorMap[skill.name] = skill.iconColor;
+      if (skill.iconSrc) iconSrcMap[skill.name] = skill.iconSrc;
+    }
+  });
+
+  return { iconMap, iconColorMap, iconSrcMap };
+}
+
 export const siteConfig = {
   name: "Fadoua Bousalim",
   title: "Senior Data & AI Engineer",

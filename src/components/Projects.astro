@@ -1,23 +1,26 @@
 ---
-import { siteConfig } from "../config";
+import { siteConfig, buildIconMaps } from "../config";
 const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
 
-// Build icon maps from config skills to avoid duplication
-const iconMap: Record<string, string> = {};
-const iconColorMap: Record<string, string> = {};
-const iconSrcMap: Record<string, string> = {};
+// Build icon maps from config skills
+const { iconMap: configIconMap, iconColorMap: configColorMap, iconSrcMap: configSrcMap } = buildIconMaps(siteConfig.skills);
 
-siteConfig.skills.forEach((skill) => {
-  if (typeof skill === "object") {
-    iconMap[skill.name] = skill.icon || "";
-    if (skill.iconColor) {
-      iconColorMap[skill.name] = skill.iconColor;
-    }
-    if (skill.iconSrc) {
-      iconSrcMap[skill.name] = skill.iconSrc;
-    }
-  }
-});
+// Merge with additional hardcoded icons for project-specific skills
+const iconMap = {
+  ...configIconMap,
+  "Jupyter":     "jupyter",
+  "Pandas":      "pandas",
+  "scikit-learn": "scikitlearn",
+};
+
+const iconColorMap = {
+  ...configColorMap,
+  "Pandas": "ffffff",
+};
+
+const iconSrcMap = {
+  ...configSrcMap,
+};
 ---
 
 {
