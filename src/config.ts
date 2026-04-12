@@ -64,7 +64,7 @@ export const siteConfig = {
       icon: "scikitlearn",
       description:
         "Implemented and analysed Naive Bayes spam classifiers (Multinomial & Gaussian) on a real email dataset, achieving up to 97% accuracy and a 0.6% false alarm rate. Paired with a Markov chain text generator to explore the limits of word independence assumptions in human language.",
-      link: "https://raw.githubusercontent.com/fadoua-bousalim/research-papers/main/Random_Modeling_For_Spam_Filtering.pdf",
+      link: "https://github.com/fadoua-bousalim/research-papers/blob/main/Random_Modeling_For_Spam_Filtering.pdf",
       skills: ["Python", "scikit-learn", "Naive Bayes", "Markov Chains", "NLP"],
     },
     {
@@ -174,19 +174,19 @@ export const siteConfig = {
   papers: [
     {
       title: "STDP-based Spiking Neural Network for Object Recognition",
-      link: "https://raw.githubusercontent.com/fadoua-bousalim/research-papers/main/STDP_based_SNN_for_object_recognition.pdf",
+      link: "https://github.com/fadoua-bousalim/research-papers/blob/main/STDP_based_SNN_for_object_recognition.pdf",
     },
     {
       title: "Neutrosophic Association Rule Mining Algorithm",
-      link: "https://raw.githubusercontent.com/fadoua-bousalim/research-papers/main/Neutrosophic_Association_Rule_Mining_Algorithm.pdf",
+      link: "https://github.com/fadoua-bousalim/research-papers/blob/main/Neutrosophic_Association_Rule_Mining_Algorithm.pdf",
     },
     {
       title: "Credit Risk Analysis Using Machine Learning",
-      link: "https://raw.githubusercontent.com/fadoua-bousalim/research-papers/main/Credit_Risk_Analysis_Using_ML.pdf",
+      link: "https://github.com/fadoua-bousalim/research-papers/blob/main/Credit_Risk_Analysis_Using_ML.pdf",
     },
     {
       title: "Random Modeling for Spam Filtering",
-      link: "https://raw.githubusercontent.com/fadoua-bousalim/research-papers/main/Random_Modeling_For_Spam_Filtering.pdf",
+      link: "https://github.com/fadoua-bousalim/research-papers/blob/main/Random_Modeling_For_Spam_Filtering.pdf",
     },
   ],
 };
