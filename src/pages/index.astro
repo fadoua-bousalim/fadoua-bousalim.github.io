@@ -27,7 +27,7 @@ import "../styles/global.css";
     <meta property="og:title" content={`${siteConfig.name} - ${siteConfig.title}`} />
     <meta property="og:description" content={siteConfig.description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://fadoua-bousalim.github.io" />
+    <meta property="og:url" content={Astro.site?.toString()} />
     <title>{siteConfig.name} - {siteConfig.title}</title>
   </head>
   <body>

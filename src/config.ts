@@ -1,37 +1,65 @@
-// Type definitions
-interface SkillObject {
+export interface SkillItem {
   name: string;
   icon?: string | null;
-  iconColor?: string;
   iconSrc?: string;
+  iconColor?: string;
 }
 
-type Skill = string | SkillObject;
-
-interface IconMaps {
-  iconMap: Record<string, string>;
-  iconColorMap: Record<string, string>;
-  iconSrcMap: Record<string, string>;
+export interface ProjectItem {
+  name: string;
+  description: string;
+  link?: string;
+  skills: string[];
+  icon?: string;
+  iconSrc?: string;
+  credits?: { label: string; link: string };
 }
 
-// Helper function to build icon maps from skills
-export function buildIconMaps(skills: Skill[]): IconMaps {
-  const iconMap: Record<string, string> = {};
-  const iconColorMap: Record<string, string> = {};
-  const iconSrcMap: Record<string, string> = {};
-
-  skills.forEach((skill) => {
-    if (typeof skill === "object") {
-      if (skill.icon) iconMap[skill.name] = skill.icon;
-      if (skill.iconColor) iconColorMap[skill.name] = skill.iconColor;
-      if (skill.iconSrc) iconSrcMap[skill.name] = skill.iconSrc;
-    }
-  });
-
-  return { iconMap, iconColorMap, iconSrcMap };
+export interface ExperienceItem {
+  company: string;
+  title: string;
+  dateRange: string;
+  bullets: string[];
+  techStack?: string[];
 }
 
-export const siteConfig = {
+export interface EducationItem {
+  school: string;
+  degree: string;
+  dateRange: string;
+  achievements: string[];
+}
+
+export interface PaperItem {
+  title: string;
+  link: string;
+}
+
+export interface SiteConfig {
+  name: string;
+  title: string;
+  tagline: string;
+  taglineAccent: string;
+  subtitle: string;
+  location?: string;
+  cvLink?: string;
+  description: string;
+  accentColor: string;
+  social: {
+    email?: string;
+    linkedin?: string;
+    github?: string;
+    twitter?: string;
+  };
+  aboutMe: string;
+  skills: SkillItem[];
+  projects: ProjectItem[];
+  experience: ExperienceItem[];
+  education: EducationItem[];
+  papers: PaperItem[];
+}
+
+export const siteConfig: SiteConfig = {
   name: "Fadoua Bousalim",
   title: "Senior Data & AI Engineer",
   tagline: "Data / AI / MLOps Engineer",
@@ -186,7 +214,12 @@ export const siteConfig = {
       dateRange: "2015 – 2019",
       achievements: [
         "Advanced statistics & probabilities",
-        "Theoretical informatics",
+        "Theoretical computer science",
+        "Random modelling",
+        "Information systems",
+        "Control systems",
+        "Quantum and statistical physics",
+        "Thermodynamics & fluid mechanics",
         "Risk management",
         "Leadership in projects",
       ],
@@ -196,11 +229,13 @@ export const siteConfig = {
       degree: "Master of Science · Applied Mathematics – Statistics & Data Science",
       dateRange: "2017 – 2018",
       achievements: [
-        "Markov Chains",
-        "Graph Theory",
-        "Stochastic Processes",
-        "Statistical Inference",
-        "Applied Data Science",
+        "Markov chains",
+        "Graph theory",
+        "Stochastic processes",
+        "Statistical inference",
+        "Applied data science",
+        "Unsupervised learning",
+        "Monte Carlo methods",
       ],
     },
   ],

@@ -70,9 +70,9 @@ const hasPapers = siteConfig.papers && siteConfig.papers.length > 0;
 
     <!-- Desktop social icons -->
     <div class="hidden md:flex items-center gap-2 social-icons">
-      {siteConfig.social?.linkedin && <SocialIcon type="linkedin" href={siteConfig.social.linkedin} />}
-      {siteConfig.social?.github && <SocialIcon type="github" href={siteConfig.social.github} />}
-      {siteConfig.social?.email && <SocialIcon type="email" href={siteConfig.social.email} />}
+      {siteConfig.social?.linkedin && <SocialIcon type="linkedin" href={siteConfig.social.linkedin} class="social-icon" />}
+      {siteConfig.social?.github && <SocialIcon type="github" href={siteConfig.social.github} class="social-icon" />}
+      {siteConfig.social?.email && <SocialIcon type="email" href={siteConfig.social.email} class="social-icon" />}
     </div>
 
     <!-- Mobile hamburger button -->
@@ -134,9 +134,9 @@ const hasPapers = siteConfig.papers && siteConfig.papers.length > 0;
       }
 
       <div class="flex items-center gap-3 pt-4" style="border-top: 1px solid var(--border); color: var(--text-secondary)">
-        {siteConfig.social?.linkedin && <SocialIcon type="linkedin" href={siteConfig.social.linkedin} />}
-        {siteConfig.social?.github && <SocialIcon type="github" href={siteConfig.social.github} />}
-        {siteConfig.social?.email && <SocialIcon type="email" href={siteConfig.social.email} />}
+        {siteConfig.social?.linkedin && <SocialIcon type="linkedin" href={siteConfig.social.linkedin} class="social-icon" />}
+        {siteConfig.social?.github && <SocialIcon type="github" href={siteConfig.social.github} class="social-icon" />}
+        {siteConfig.social?.email && <SocialIcon type="email" href={siteConfig.social.email} class="social-icon" />}
       </div>
     </div>
   </nav>
