@@ -2,32 +2,22 @@
 import { siteConfig } from "../config";
 const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
 
-const iconMap: Record<string, string> = {
-  "Python":     "python",
-  "FastAPI":    "fastapi",
-  "Jupyter":    "jupyter",
-  "Pandas":     "pandas",
-  "Docker":     "docker",
-  "Fly.io":     "flydotio",
-  "Koyeb":      "koyeb",
-  "Supabase":   "supabase",
-  "PyTorch":    "pytorch",
-  "TensorFlow": "tensorflow",
-  "GCP":         "googlecloud",
-  "SQL":         "postgresql",
-  "scikit-learn": "scikitlearn",
-};
+// Build icon maps from config skills to avoid duplication
+const iconMap: Record<string, string> = {};
+const iconColorMap: Record<string, string> = {};
+const iconSrcMap: Record<string, string> = {};
 
-// Icons with dark brand colors need a white override
-const iconColorMap: Record<string, string> = {
-  "Pandas": "ffffff",
-  "Fly.io": "ffffff",
-  "Koyeb":  "ffffff",
-};
-
-const iconSrcMap: Record<string, string> = {
-  "AWS": "/icons/aws.svg",
-};
+siteConfig.skills.forEach((skill) => {
+  if (typeof skill === "object") {
+    iconMap[skill.name] = skill.icon || "";
+    if (skill.iconColor) {
+      iconColorMap[skill.name] = skill.iconColor;
+    }
+    if (skill.iconSrc) {
+      iconSrcMap[skill.name] = skill.iconSrc;
+    }
+  }
+});
 ---
 
 {

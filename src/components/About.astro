@@ -28,12 +28,14 @@ import { siteConfig } from "../config";
             const isObj = typeof skill === "object";
             const name = isObj ? skill.name : skill;
             const icon = isObj ? skill.icon : null;
+            const iconSrc = isObj ? skill.iconSrc : null;
+            const iconColor = isObj ? skill.iconColor : null;
 
             return (
               <div class="skill-card inline-flex items-center gap-1.5 sm:gap-2.5 px-2.5 sm:px-4 py-1.5 sm:py-2.5 rounded-lg transition-all duration-200">
-                {(icon || skill.iconSrc) ? (
+                {isObj && (icon || iconSrc) ? (
                   <img
-                    src={skill.iconSrc ?? `https://cdn.simpleicons.org/${icon}${skill.iconColor ? '/' + skill.iconColor : ''}`}
+                    src={iconSrc ?? `https://cdn.simpleicons.org/${icon}${iconColor ? '/' + iconColor : ''}`}
                     alt={name}
                     width="22"
                     height="22"

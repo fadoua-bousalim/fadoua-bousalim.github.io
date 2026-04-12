@@ -5,7 +5,7 @@
   --bg-surface: #14142a;
   --bg-surface-hover: #1a1a34;
   --border: rgba(255, 255, 255, 0.1);
-  --border-hover: rgba(255, 107, 0, 0.35);
+  --border-hover: color-mix(in srgb, var(--accent-color) 35%, transparent);
   --text-primary: #eeeeff;
   --text-secondary: #a8a8cc;
   --text-muted: #686888;
@@ -18,7 +18,7 @@ body {
 }
 
 ::selection {
-  background-color: rgba(255, 107, 0, 0.3);
+  background-color: color-mix(in srgb, var(--accent-color) 30%, transparent);
   color: #e8e8f8;
 }
 
