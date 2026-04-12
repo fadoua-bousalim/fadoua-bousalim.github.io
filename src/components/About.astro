@@ -1,0 +1,72 @@
+---
+import { siteConfig } from "../config";
+---
+
+<section id="about" class="p-8 sm:p-12 md:p-16 lg:p-24">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+    <div class="lg:col-span-3">
+      <h2
+        class="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold"
+        style="color: var(--text-primary)"
+      >
+        About Me
+      </h2>
+      <div
+        class="w-[75px] h-[4px] mt-3 rounded-full"
+        style={`background-color: ${siteConfig.accentColor}`}
+      ></div>
+    </div>
+
+    <div class="lg:col-span-9 space-y-8">
+      <p class="text-lg sm:text-xl leading-relaxed text-justify" style="color: var(--text-secondary)">
+        {siteConfig.aboutMe}
+      </p>
+
+      <div class="flex flex-wrap gap-2">
+        {
+          siteConfig.skills.map((skill) => {
+            const isObj = typeof skill === "object";
+            const name = isObj ? skill.name : skill;
+            const icon = isObj ? skill.icon : null;
+
+            return (
+              <div class="skill-card inline-flex items-center gap-2.5 px-4 py-2.5 rounded-lg transition-all duration-200">
+                {(icon || skill.iconSrc) ? (
+                  <img
+                    src={skill.iconSrc ?? `https://cdn.simpleicons.org/${icon}${skill.iconColor ? '/' + skill.iconColor : ''}`}
+                    alt={name}
+                    width="22"
+                    height="22"
+                    class="w-[22px] h-[22px] opacity-90 shrink-0"
+                  />
+                ) : (
+                  <div
+                    class="w-[22px] h-[22px] rounded flex items-center justify-center text-[10px] font-bold shrink-0"
+                    style={`background-color: ${siteConfig.accentColor}20; color: ${siteConfig.accentColor}`}
+                  >
+                    {name.slice(0, 2).toUpperCase()}
+                  </div>
+                )}
+                <span class="text-sm font-medium whitespace-nowrap" style="color: var(--text-secondary)">
+                  {name}
+                </span>
+              </div>
+            );
+          })
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skill-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border);
+  }
+  .skill-card:hover {
+    border-color: var(--border-hover);
+    background-color: var(--bg-surface-hover);
+    transform: translateY(-2px);
+  }
+</style>

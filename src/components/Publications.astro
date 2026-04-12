@@ -1,0 +1,73 @@
+---
+import { siteConfig } from "../config";
+const hasPapers = siteConfig.papers && siteConfig.papers.length > 0;
+---
+
+{
+  hasPapers && (
+    <section id="publications" class="p-8 sm:p-12 md:p-16 lg:p-24">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+        <div class="lg:col-span-3">
+          <h2
+            class="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold"
+            style="color: var(--text-primary)"
+          >
+            Publications
+          </h2>
+          <div
+            class="w-[75px] h-[4px] mt-3 rounded-full"
+            style={`background-color: ${siteConfig.accentColor}`}
+          />
+        </div>
+
+        <div class="lg:col-span-9 space-y-3">
+          {siteConfig.papers.map((paper) => (
+            <a
+              href={paper.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="paper-card group flex items-center justify-between gap-4 p-4 sm:p-5 rounded-xl transition-all duration-200"
+            >
+              <div class="flex items-center gap-4">
+                <!-- Paper icon -->
+                <div
+                  class="shrink-0 w-9 h-9 rounded-lg flex items-center justify-center"
+                  style={`background-color: ${siteConfig.accentColor}12; color: ${siteConfig.accentColor}`}
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
+                <span class="text-sm sm:text-base font-medium leading-snug" style="color: var(--text-secondary)">
+                  {paper.title}
+                </span>
+              </div>
+
+              <!-- Arrow -->
+              <div class="shrink-0 transition-transform duration-200 group-hover:translate-x-1" style="color: var(--text-muted)">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .paper-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border);
+  }
+  .paper-card:hover {
+    border-color: var(--border-hover);
+    background-color: var(--bg-surface-hover);
+  }
+  .paper-card:hover span {
+    color: var(--text-primary) !important;
+  }
+</style>
