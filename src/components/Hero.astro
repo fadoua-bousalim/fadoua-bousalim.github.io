@@ -2,7 +2,7 @@
 import { siteConfig } from "../config";
 ---
 
-<div
+<section
   id="hero"
   class="relative isolate overflow-hidden min-h-screen flex flex-col justify-center"
   style={`--accent-color: ${siteConfig.accentColor}; background-color: var(--bg-base)`}
@@ -23,12 +23,12 @@ import { siteConfig } from "../config";
 
   <!-- Accent glow blob top-left -->
   <div
-    class="absolute -top-40 -left-40 -z-10 w-[600px] h-[600px] rounded-full opacity-[0.08] blur-3xl"
+    class="absolute -top-40 -left-40 -z-10 w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] rounded-full opacity-[0.08] blur-3xl"
     style={`background-color: ${siteConfig.accentColor}`}
   ></div>
   <!-- Fainter secondary blob -->
   <div
-    class="absolute top-1/2 right-0 -z-10 w-[400px] h-[400px] rounded-full opacity-[0.04] blur-3xl"
+    class="absolute top-1/2 right-0 -z-10 w-[200px] h-[200px] sm:w-[400px] sm:h-[400px] rounded-full opacity-[0.04] blur-3xl"
     style={`background-color: ${siteConfig.accentColor}`}
   ></div>
 
@@ -95,7 +95,7 @@ import { siteConfig } from "../config";
       }
     </div>
   </div>
-</div>
+</section>
 
 <style>
   @keyframes fadeIn {

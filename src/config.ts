@@ -129,7 +129,7 @@ export const siteConfig = {
         "Performed data analysis, correction, and visualisation on transport system databases",
         "Built models for passenger flow prediction and error margin estimation & reduction",
       ],
-      techStack: ["Python", "R", "Statistics", "Preditictive Modelling"],
+      techStack: ["Python", "R", "Statistics", "Predictive Modelling"],
     },
   ],
   education: [
