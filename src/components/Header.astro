@@ -16,8 +16,8 @@ const hasPapers = siteConfig.papers && siteConfig.papers.length > 0;
     <!-- Logo -->
     <a
       href="#hero"
-      class="transition-opacity hover:opacity-70"
-      style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 600; letter-spacing: 0.01em; color: var(--text-primary); line-height: 1;"
+      class="transition-opacity hover:opacity-70 text-[1.6rem] sm:text-[2.2rem]"
+      style="font-family: 'Cormorant Garamond', serif; font-weight: 600; letter-spacing: 0.01em; color: var(--text-primary); line-height: 1;"
     >
       {siteConfig.name.split(" ")[0]}<span style={`color: ${siteConfig.accentColor}`}>.</span>
     </a>
@@ -111,6 +111,7 @@ const hasPapers = siteConfig.papers && siteConfig.papers.length > 0;
       style="color: var(--text-secondary); border: 1px solid var(--border); background-color: var(--bg-surface)"
       aria-label="Toggle menu"
       aria-expanded="false"
+      aria-controls="mobile-menu"
     >
       <svg id="hamburger-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -122,7 +123,7 @@ const hasPapers = siteConfig.papers && siteConfig.papers.length > 0;
   </nav>
 
   <!-- Mobile menu -->
-  <div
+  <nav
     id="mobile-menu"
     class="md:hidden hidden"
     style="background-color: rgba(10, 10, 18, 0.95); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-top: 1px solid var(--border)"
@@ -160,7 +161,7 @@ const hasPapers = siteConfig.papers && siteConfig.papers.length > 0;
         )
       }
 
-      <div class="flex items-center gap-3 pt-4" style="border-top: 1px solid var(--border)">
+      <div class="flex items-center gap-3 pt-4" style="border-top: 1px solid var(--border); color: var(--text-secondary)">
         {
           siteConfig.social?.linkedin && (
             <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon transition-colors duration-200">
@@ -196,7 +197,7 @@ const hasPapers = siteConfig.papers && siteConfig.papers.length > 0;
         }
       </div>
     </div>
-  </div>
+  </nav>
 </header>
 
 <script>

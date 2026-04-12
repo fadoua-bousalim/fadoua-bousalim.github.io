@@ -22,7 +22,7 @@ import { siteConfig } from "../config";
         {siteConfig.aboutMe}
       </p>
 
-      <div class="flex flex-wrap gap-2">
+      <div class="flex flex-wrap gap-1.5 sm:gap-2">
         {
           siteConfig.skills.map((skill) => {
             const isObj = typeof skill === "object";
@@ -30,24 +30,24 @@ import { siteConfig } from "../config";
             const icon = isObj ? skill.icon : null;
 
             return (
-              <div class="skill-card inline-flex items-center gap-2.5 px-4 py-2.5 rounded-lg transition-all duration-200">
+              <div class="skill-card inline-flex items-center gap-1.5 sm:gap-2.5 px-2.5 sm:px-4 py-1.5 sm:py-2.5 rounded-lg transition-all duration-200">
                 {(icon || skill.iconSrc) ? (
                   <img
                     src={skill.iconSrc ?? `https://cdn.simpleicons.org/${icon}${skill.iconColor ? '/' + skill.iconColor : ''}`}
                     alt={name}
                     width="22"
                     height="22"
-                    class="w-[22px] h-[22px] opacity-90 shrink-0"
+                    class="w-4 h-4 sm:w-[22px] sm:h-[22px] opacity-90 shrink-0"
                   />
                 ) : (
                   <div
-                    class="w-[22px] h-[22px] rounded flex items-center justify-center text-[10px] font-bold shrink-0"
+                    class="w-4 h-4 sm:w-[22px] sm:h-[22px] rounded flex items-center justify-center text-[8px] sm:text-[10px] font-bold shrink-0"
                     style={`background-color: ${siteConfig.accentColor}20; color: ${siteConfig.accentColor}`}
                   >
                     {name.slice(0, 2).toUpperCase()}
                   </div>
                 )}
-                <span class="text-sm font-medium whitespace-nowrap" style="color: var(--text-secondary)">
+                <span class="text-xs sm:text-sm font-medium whitespace-nowrap" style="color: var(--text-secondary)">
                   {name}
                 </span>
               </div>
