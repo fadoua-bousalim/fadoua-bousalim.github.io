@@ -93,7 +93,7 @@ export const siteConfig = {
       title: "Senior Data Scientist & MLOps Engineer",
       dateRange: "Jan 2023 – Sept 2024",
       bullets: [
-        "Built GenAI product data infrastructure from the ground up",
+        "Built GenAI products data infrastructure from the ground up",
         "Designed and optimised ETL processes using DBT, GCP, and Airflow",
         "Owned the full MLOps lifecycle, from pipeline design and model training to production deployment",
       ],
