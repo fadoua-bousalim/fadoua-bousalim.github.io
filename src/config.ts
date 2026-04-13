@@ -54,8 +54,8 @@ export interface SiteConfig {
   };
   aboutMe?: string;
   skills: SkillItem[];
-  projects: ProjectItem[];
   experience: ExperienceItem[];
+  projects: ProjectItem[];
   education: EducationItem[];
   papers: PaperItem[];
 }
