@@ -103,41 +103,6 @@ export const siteConfig: SiteConfig = {
     { name: "Airflow",          icon: "apacheairflow" },
     { name: "DBT",              iconSrc: "/icons/dbt.png" },
   ],
-  projects: [
-    {
-      name: "Reddit Sentiment API",
-      icon: "reddit",
-      description:
-        "A FastAPI-powered REST API that searches Reddit for any keyword and returns VADER sentiment analysis across recent posts (positive, neutral, or negative). Includes a built-in browser UI and interactive Swagger docs. Deployed on Fly.io.",
-      link: "https://sentiment-analysis-flyio.fly.dev/",
-      skills: ["Python", "FastAPI", "NLP", "VADER", "Fly.io"],
-    },
-    {
-      name: "Salicylate Sensitivity Lookup",
-      iconSrc: "/icons/leaf.svg",
-      description:
-        "A food lookup tool helping users identify salicylate levels and manage sensitivity. I built the backend API and data layer.",
-      link: "https://salicylate.online/",
-      skills: ["Python", "FastAPI", "REST API", "Supabase", "AWS", "Koyeb"],
-      credits: { label: "Aqilah Misuary", link: "https://github.com/aqilahmisuary" },
-    },
-    {
-      name: "Spam Filtering - Naive Bayes & Markov Chains",
-      icon: "scikitlearn",
-      description:
-        "Implemented and analysed Naive Bayes spam classifiers (Multinomial & Gaussian) on a real email dataset, achieving up to 97% accuracy and a 0.6% false alarm rate. Paired with a Markov chain text generator to explore the limits of word independence assumptions in human language.",
-      link: "https://github.com/fadoua-bousalim/spam-filtering",
-      skills: ["Python", "scikit-learn", "Naive Bayes", "Markov Chains", "NLP"],
-    },
-    {
-      name: "COVID-19 Data Visualisation",
-      icon: "jupyter",
-      description:
-        "Exploratory data analysis and interactive visualisation of global COVID-19 trends, including case evolution, mortality rates, and geographic spread across time.",
-      link: "https://github.com/fadoua-bousalim/covid-19-data-viz",
-      skills: ["Python", "Jupyter", "Data Visualisation", "Pandas"],
-    },
-  ],
   experience: [
     {
       company: "Opti Digital",
@@ -192,6 +157,41 @@ export const siteConfig: SiteConfig = {
         "Built models for passenger flow prediction and error margin estimation & reduction",
       ],
       techStack: ["Python", "R", "Statistics", "Predictive Modelling"],
+    },
+  ],
+  projects: [
+    {
+      name: "Reddit Sentiment API",
+      icon: "reddit",
+      description:
+        "A FastAPI-powered REST API that searches Reddit for any keyword and returns VADER sentiment analysis across recent posts (positive, neutral, or negative). Includes a built-in browser UI and interactive Swagger docs. Deployed on Fly.io.",
+      link: "https://sentiment-analysis-flyio.fly.dev/",
+      skills: ["Python", "FastAPI", "NLP", "VADER", "Fly.io"],
+    },
+    {
+      name: "Salicylate Sensitivity Lookup",
+      iconSrc: "/icons/leaf.svg",
+      description:
+        "A food lookup tool helping users identify salicylate levels and manage sensitivity. I built the backend API and data layer.",
+      link: "https://salicylate.online/",
+      skills: ["Python", "FastAPI", "REST API", "Supabase", "AWS", "Koyeb"],
+      credits: { label: "Aqilah Misuary", link: "https://github.com/aqilahmisuary" },
+    },
+    {
+      name: "Spam Filtering - Naive Bayes & Markov Chains",
+      icon: "scikitlearn",
+      description:
+        "Implemented and analysed Naive Bayes spam classifiers (Multinomial & Gaussian) on a real email dataset, achieving up to 97% accuracy and a 0.6% false alarm rate. Paired with a Markov chain text generator to explore the limits of word independence assumptions in human language.",
+      link: "https://github.com/fadoua-bousalim/spam-filtering",
+      skills: ["Python", "scikit-learn", "Naive Bayes", "Markov Chains", "NLP"],
+    },
+    {
+      name: "COVID-19 Data Visualisation",
+      icon: "jupyter",
+      description:
+        "Exploratory data analysis and interactive visualisation of global COVID-19 trends, including case evolution, mortality rates, and geographic spread across time.",
+      link: "https://github.com/fadoua-bousalim/covid-19-data-viz",
+      skills: ["Python", "Jupyter", "Data Visualisation", "Pandas"],
     },
   ],
   education: [

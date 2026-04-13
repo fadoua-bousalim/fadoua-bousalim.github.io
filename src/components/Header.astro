@@ -26,19 +26,19 @@ const hasPapers = siteConfig.papers.length > 0;
     <!-- Desktop nav links -->
     <ul role="list" class="hidden md:flex items-center gap-8">
       {
-        hasExperience && (
+        hasAbout && (
           <li>
-            <a href="#experience" class="text-sm font-medium transition-colors duration-200 nav-link">
-              Experience
+            <a href="#about" class="text-sm font-medium transition-colors duration-200 nav-link">
+              About
             </a>
           </li>
         )
       }
       {
-        hasAbout && (
+        hasExperience && (
           <li>
-            <a href="#about" class="text-sm font-medium transition-colors duration-200 nav-link">
-              About
+            <a href="#experience" class="text-sm font-medium transition-colors duration-200 nav-link">
+              Experience
             </a>
           </li>
         )
@@ -106,16 +106,16 @@ const hasPapers = siteConfig.papers.length > 0;
   >
     <div class="px-6 py-6 space-y-4">
       {
-        hasExperience && (
-          <a href="#experience" class="block text-base font-medium nav-link transition-colors duration-200 py-2">
-            Experience
+        hasAbout && (
+          <a href="#about" class="block text-base font-medium nav-link transition-colors duration-200 py-2">
+            About
           </a>
         )
       }
       {
-        hasAbout && (
-          <a href="#about" class="block text-base font-medium nav-link transition-colors duration-200 py-2">
-            About
+        hasExperience && (
+          <a href="#experience" class="block text-base font-medium nav-link transition-colors duration-200 py-2">
+            Experience
           </a>
         )
       }
